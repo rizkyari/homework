@@ -1,11 +1,12 @@
 tiket = input("Metode tiket yang anda pilih ? (offline/online/jendela) ").lower()
+jumlah = int(input("Masukan jumlah tiket yang ingin dibeli : "))
 a = 2500
 b = 3500
 c = 4500
 d = 6000
 e = 8000
 total = 0
-
+choosen = ''
 seat = input('''
 Pilih jenis kursi :
 Biasa           (A)
@@ -18,50 +19,77 @@ Pilihan hanya A, B, C, D, atau E !
 
 if tiket == "offline":
     if seat == "a":
-        diskon = a * (8/100)
-        total = a - diskon
+        pesanan = a * jumlah
+        diskon = pesanan * (8/100)
+        total = pesanan - diskon
+        choosen = "biasa"
     elif seat == "b":
-        diskon = b * (8/100)
-        total = b - diskon
+        pesanan = b * jumlah
+        diskon = pesanan * (8/100)
+        total = pesanan - diskon
+        choosen = "paviliun"
     elif seat == "c":
-        diskon = c * (8/100)
-        total = c - diskon
+        pesanan = c * jumlah
+        diskon = pesanan * (8/100)
+        total = pesanan - diskon
+        choosen = "paviliun atas"
     elif seat == "d":
-        diskon = d * (8/100)
-        total = d - diskon
+        pesanan = d * jumlah
+        diskon = pesanan * (8/100)
+        total = pesanan - diskon
+        choosen = "vip"
     elif seat == "e":
-        diskon = e * (8/100)
-        total = e - diskon
+        pesanan = e * jumlah
+        diskon = pesanan * (8/100)
+        total = pesanan - diskon
+        choosen = "vvip"
 elif tiket == "online":
     if seat == "a":
-        diskon = a * (10/100)
-        total = a - diskon
+        pesanan = a * jumlah
+        diskon = pesanan * (10/100)
+        total = pesanan - diskon
+        choosen = "biasa"
     elif seat == "b":
-        diskon = b * (10/100)
-        total = b - diskon
+        pesanan = b * jumlah
+        diskon = pesanan * (10/100)
+        total = pesanan - diskon
+        choosen = "paviliun"
     elif seat == "c":
-        diskon = c * (10/100)
-        total = c - diskon
+        pesanan = c * jumlah
+        diskon = pesanan * (10/100)
+        total = pesanan - diskon
+        choosen = "paviliun atas"
     elif seat == "d":
-        diskon = d * (10/100)
-        total = d - diskon
+        pesanan = d * jumlah
+        diskon = pesanan * (10/100)
+        total = pesanan - diskon
+        choosen = "vip"
     elif seat == "e":
-        diskon = e * (10/100)
-        total = e - diskon
+        pesanan = e * jumlah
+        diskon = pesanan * (10/100)
+        total = pesanan - diskon
+        choosen = "vvip"
 elif tiket == "jendela":
     if seat == "a":
-        total = a
+        total = a * jumlah
+        choosen = "biasa"
     elif seat == "b":
-        total = b
+        total = b * jumlah
+        choosen = "paviliun"
     elif seat == "c":
-        total = c
+        total = c * jumlah
+        choosen = "paviliun atas"
     elif seat == "d":
-        total = d
+        total = d * jumlah
+        choosen = "vip"
     elif seat == "e":
-        total = e
+        total = e * jumlah
+        choosen = "vvip"
 else:
     print("error")
 
 print(f'''
-total pesanan anda adalah {total}
+Anda akan membeli tiket secara {tiket} .
+Dengan tipe seat {choosen} berjumlah {jumlah} buah
+Total pesanan anda adalah Rp.{total}
 ''')
